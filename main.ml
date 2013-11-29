@@ -29,7 +29,7 @@ let speclist = [
    "Lance les tests liés au module mcell");
   ("-c", Arg.Unit(fun () -> graphic := false),
    "Ne lance pas l'application graphique");
-  ("-rle", Arg.String(fun s -> 
+  ("-rle", Arg.String(fun s ->
     print_endline "rle"; result_out := Some(s)),
    "Enregistre le résultat dans un fichier .rle");
   ("-mc", Arg.String(fun s -> result_out := Some(s); out_type := Mc),
@@ -38,7 +38,7 @@ let speclist = [
    "Itère t fois le jeu de la vie sur la mcell résultante appelée
     (t>0 sinon ignoré)");
   ("-op", Arg.Unit(fun () -> mode_op := true), "Mode operation");
-  ("-dot", Arg.String(fun s -> filename_dot := Some(s)), 
+  ("-dot", Arg.String(fun s -> filename_dot := Some(s)),
    "Imprime le mcell dans un fichier .dot")
 ]
 
@@ -51,14 +51,14 @@ let main filename1 =
   if not !mode_op then
     begin
       (* On récupère la mcell à traiter en fonction de l'opération demandée *)
-      let mcell = 
+      let mcell =
         match !operation with
           | Normal -> Common_fun.file_to_mcell filename1
           | Union ->
               begin
                 match !filename2 with
                   | None -> raise (Arg.Bad "Usage : -union [filename1] [filename2]")
-                  | Some s -> 
+                  | Some s ->
                       let m1 = Common_fun.file_to_mcell filename1 in
                       let m2 = Common_fun.file_to_mcell s in
                       let m = Mcell.union m1 m2 in
@@ -99,11 +99,11 @@ let main filename1 =
       begin
         match !result_out with
           | None -> ();
-          | Some(s) -> 
+          | Some(s) ->
               if !out_type = Rle then Rle.write mcell s
               else Mc_file.write mcell s
       end;
-      
+
       begin
         match !filename_dot with
           | None -> ();
@@ -119,7 +119,7 @@ let main filename1 =
     let frle = Rle.write in
     let fmc = Mc_file.write in
     Common_fun.execute_mcop filename1 fd frle fmc
-  
+
 
 let _ =
   let argvl = Array.length Sys.argv in

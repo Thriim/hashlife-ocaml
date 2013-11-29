@@ -1,0 +1,29 @@
+begin library "core"
+    files = [ "mcell.ml" ]
+end
+
+begin library "rle"
+    sort = true
+    files  = [ "hmatrix.ml" "lexer.mll" "parser.mly" "rle_action.mli" "rle.ml" ]
+    requires = [ "core" ]
+end
+
+begin library "mc"
+    sort = true
+    files = [ "mc_file.ml" "mc_lexer.mll" "mc_parser.mly" ]
+    requires = [ "core" "rle" ]
+end
+
+begin library "mcop"
+    sort = true
+    files = [ "mcop_ast.mli" "mcop_lexer.mll" "mcop_parser.mly" ]
+    requires = [ "core" "rle" "mc" ]
+end
+
+begin program "hashlife-gtk"
+    sort = true
+    files = [ "main.ml" "guigol.ml" "common_fun.ml" "state_edit.ml"
+              "state_normal.ml" "state_zoom.ml" "test.ml" ]
+    requires = [ "core" "rle" "mc" "mcop" "cairo" "lablgtk2"
+                   "lablgtk2.auto-init" "cairo.lablgtk2" ]
+end

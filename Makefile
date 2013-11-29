@@ -2,13 +2,10 @@
 EXECS = hashlife main.byte main.native testRapport
 
 all:
-	ocamlbuild -pkgs cairo,lablgtk2,lablgtk2.auto-init,cairo.lablgtk2 main.byte
-	mv main.byte hashlife
-
-testRapport:
-	ocamlbuild -pkgs cairo,lablgtk2,lablgtk2.auto-init,cairo.lablgtk2 testRapport.byte
-	mv testRapport.byte testRapport
+	ocp-build
+	mv _obuild/hashlife-gtk/hashlife-gtk.byte hashlife
 
 clean:
 	rm -f *.cm[iox] *~ .*~ *.o #*#
 	rm -f $(EXECS)
+	ocp-build clean
