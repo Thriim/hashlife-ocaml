@@ -1,0 +1,26 @@
+digraph {
+node [shape = record];
+n411 [label="{<id> S ize : 2 |{<nw> NW|<ne> NE|<sw> SW|<se> SE}}"];
+n411:nw -> n3;
+n411:ne -> n2;
+n411:sw -> n2;
+n411:se -> n3;
+n2 [label="{<id> S ize : 1 |{<nw> NW|<ne> NE|<sw> SW|<se> SE}}"];
+n2:nw -> n0;
+n2:ne -> n0;
+n2:sw -> n0;
+n2:se -> n0;
+n0 [label="<id> OFF"];
+n0 [label="<id> OFF"];
+n0 [label="<id> OFF"];
+n0 [label="<id> OFF"];
+n3 [label="{<id> S ize : 1 |{<nw> NW|<ne> NE|<sw> SW|<se> SE}}"];
+n3:nw -> n1;
+n3:ne -> n1;
+n3:sw -> n1;
+n3:se -> n1;
+n1 [label="<id> ON"];
+n1 [label="<id> ON"];
+n1 [label="<id> ON"];
+n1 [label="<id> ON"];
+}

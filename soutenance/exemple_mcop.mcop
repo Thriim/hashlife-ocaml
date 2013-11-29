@@ -1,0 +1,5 @@
+let a = extend(extend(readRle("../files/puffer.rle"))) in
+let b = union(a, mirror(a)) in
+let c = rotate90(b) in
+let res = union(b, c) in
+outMC(res, "resultat.mc")

@@ -1,0 +1,4 @@
+let a = readRle("files/puffer.rle") in
+let b = iter(a, 40) in
+
+union(a, mirror(b))
