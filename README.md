@@ -1,7 +1,7 @@
 hashlife-ocaml
 ==============
 
-Authors : David Maison <david.maison@u-psud.fr> student at Université Paris-Sud and Pierrick Couderc <pierrickcouderc@gmail.com> student at Université Pierre et Marie Currie (former Paris-Sud's student).
+Authors : David Maison <david.maison@u-psud.fr> student at Université Paris-Sud and Pierrick Couderc <pierrickcouderc@gmail.com> student at Université Pierre et Marie Curie (former Paris-Sud's student).
 
 
 Previous project developped during our "Travail d'Etudes et de Recherches", under the supervision of Jean-Christophe Filliâtre (LRI).
